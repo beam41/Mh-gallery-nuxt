@@ -1,5 +1,8 @@
 export default {
   mode: 'spa',
+  server: {
+    port: 8000
+  },
   /*
    ** Headers of the page
    */
@@ -19,20 +22,21 @@ export default {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: { color: '#000' },
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['normalize.css/normalize.css', '~/assets/main.scss'],
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ['~/plugins/Services.ts'],
   /*
    ** Nuxt.js dev-modules
    */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
+    '@nuxt/typescript-build',
     '@nuxtjs/eslint-module'
   ],
   /*

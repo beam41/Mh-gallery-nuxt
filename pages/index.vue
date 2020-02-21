@@ -1,68 +1,37 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        mh-gallery-nuxt
-      </h1>
-      <h2 class="subtitle">
-        My kryptonian Nuxt.js project
-      </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+  <div class="Home f-nav">
+    <div class="jumbotron">
+      <h1>Meehoi Gallery</h1>
     </div>
+    <ImageList />
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import Vue from 'vue'
+import ImageList from '@/components/Home/ImageList.vue'
 
-export default {
-  components: {
-    Logo
+export default Vue.extend({
+  name: 'Home',
+  components: { ImageList },
+  created() {
+    this.$setDocName('Meehoi Gallery')
   }
-}
+})
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
+<style lang="scss" scoped>
+.jumbotron {
+  height: 500px;
+  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+    url('http://localhost:3000/img/DSC06153.jpg') no-repeat center/cover;
   display: flex;
-  justify-content: center;
   align-items: center;
-  text-align: center;
-}
+  justify-content: center;
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+  & h1 {
+    font-size: 5rem;
+    color: white;
+  }
 }
 </style>
